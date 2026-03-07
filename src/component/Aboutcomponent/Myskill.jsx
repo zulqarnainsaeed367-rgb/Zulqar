@@ -7,23 +7,25 @@ const Myskill = () => {
 
     const education = [
         {
-            year: "2020 - 2024",
-            degree: "Bachelor of Computer Science",
-            institute: "Your University Name",
-            desc: "Specialized in Software Engineering and Web Technologies."
+            year: "2024 - 2028",
+            degree: "B.S Information Technology",
+            institute: "The Islamia University of Bahawalpur",
+            desc: "Focused on Information Technology, including programming, web development, databases, and modern software technologies."
         },
         {
-            year: "2018 - 2020",
-            degree: "Intermediate in ICS",
-            institute: "Your College Name",
-            desc: "Foundational studies in Mathematics and Computer Science."
+            degree: "Frontend Certification",
+            year: "2023",
+            institute: " Code's Thinker",
+            desc: "React, Next.js & modern JavaScript."
         }
     ];
 
     const skills = [
+        { name: "HTML5", percentage: 99 },
+        { name: "CSS3", percentage: 99 },
         { name: "React.js / Next.js", percentage: 98 },
         { name: "JavaScript (ES6+)", percentage: 95 },
-        { name: "Tailwind CSS", percentage: 92 },
+        { name: "Tailwind CSS", percentage: 100 },
         { name: "Firebase ", percentage: 85 },
     ];
 
@@ -47,7 +49,7 @@ const Myskill = () => {
     return (
         <section ref={sectionRef} className="py-10 bg-[#0B1120] text-white overflow-hidden" id="skills">
             <div className="max-w-7xl mx-auto px-6">
-                
+
                 {/* Section Heading */}
                 <div className="flex flex-col items-center text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -57,7 +59,7 @@ const Myskill = () => {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
-                    
+
                     {/* LEFT COLUMN: Education */}
                     <div className="space-y-10">
                         <div className="flex items-center gap-4 mb-2">
@@ -75,7 +77,7 @@ const Myskill = () => {
                                 <div key={index} className="relative">
                                     {/* Timeline Dot */}
                                     <div className="absolute -left-[41px] top-1 w-5 h-5 bg-[#0B1120] border-2 border-blue-500 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.5)]"></div>
-                                    
+
                                     <span className="text-blue-500 font-bold text-sm tracking-widest">{edu.year}</span>
                                     <h4 className="text-xl font-bold text-white mt-1">{edu.degree}</h4>
                                     <p className="text-blue-400 text-sm font-medium">{edu.institute}</p>
@@ -115,7 +117,7 @@ const Myskill = () => {
                                 </div>
                             ))}
                         </div>
-                        
+
                         {/* Call to Action Buttons */}
                         <div className="flex flex-wrap gap-4 pt-4">
                             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all duration-300 shadow-[0_5px_15px_rgba(37,99,235,0.4)] active:scale-95">
