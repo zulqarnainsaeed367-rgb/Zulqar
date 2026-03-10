@@ -1,35 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import k8 from "../../assets/k8.png";
 import k7 from "../../assets/k7.png";
 import k6 from "../../assets/k6.png";
 import k4 from "../../assets/k4.png";
 import k5 from "../../assets/k5.png";
+import k9 from "../../assets/k9.png";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    category: "Forentend",
-    desc: "A high-performance online store featuring seamless product filtering, shopping cart logic, and a clean minimalist checkout UI.",
+    title: "ZS Store Website",
+    category: "Frontend",
+    desc: "A responsive e-commerce website for ZS Store, featuring product listings, shopping cart, and a modern user-friendly interface.",
     img: k8,
     tags: ["React", "Node.js", "MongoDB"],
-    liveLink: "",
+    liveLink: "https://zs-store-ten.vercel.app/",
     codeLink: "#",
   },
   {
-    title: "Personal Portfolio",
+    title: "Code Thinker Website",
     category: "Frontend",
-    desc: "Interactive portfolio showcasing interactive UI components, smooth scroll animations, and a high-tech dark mode aesthetic.",
+    desc: "A responsive website for Code Thinker, showcasing programming tutorials, projects, and tech resources.",
     img: k7,
     tags: ["React", "Framer Motion", "Tailwind"],
     liveLink: "https://codes-thinker.vercel.app/",
     codeLink: "#",
   },
   {
-    title: "Admin Dashboard",
+    title: "Al-Huda Online Quran Academy Website",
     category: "Frontend",
-    desc: "A comprehensive dashboard for data visualization, featuring real-time charts, user management, and responsive layouts.",
-    img: k6, 
+    desc: "A responsive and interactive website for Al-Huda Online Quran Academy, featuring course details, teacher information, student registration, and contact pages.",
+    img: k6,
     tags: ["React", "Chart.js", "Redux"],
     liveLink: "https://al-huda-weld.vercel.app/",
     codeLink: "#",
@@ -38,7 +41,7 @@ const projects = [
     title: "SaaS Landing Page",
     category: "Frontend",
     desc: "Modern landing page for a SaaS startup with optimized SEO, accessibility standards, and high-conversion UI elements.",
-    img: k4, 
+    img: k4,
     tags: ["Next.js", "TypeScript", "Tailwind"],
     liveLink: "#",
     codeLink: "#",
@@ -51,23 +54,45 @@ const projects = [
     tags: ["React Native", "Firebase", "UI/UX"],
     liveLink: "https://project-mu-flax.vercel.app/",
     codeLink: "#",
-  }
+  },
+  {
+    title: "Learn Skill",
+    category: "Frontend",
+    desc: "Clean and minimalist financial application interface focusing on user experience and data clarity.",
+    img: k9,
+    tags: ["React Native", "Firebase", "UI/UX"],
+    liveLink: "https://ism-institude.vercel.app/",
+    codeLink: "#",
+  },
 ];
 
 const Projects = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true, easing: "ease-out-cubic" });
+  }, []);
+
   return (
-    <section className="py-24 bg-[#050b1a] text-white relative overflow-hidden">
+    <section
+      className="py-24 bg-[#050b1a] text-white relative overflow-hidden"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       {/* Background Decorative Glows */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-600/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
         {/* Header Section */}
-        <div className="text-center mb-20">
+        <div
+          className="text-center mb-20"
+          data-aos="fade-right"
+          data-aos-duration="1500"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-             <span className="w-2 h-2 rounded-full bg-[#1b66ff] animate-pulse"></span>
-             <span className="text-[#1b66ff] font-bold tracking-[0.2em] uppercase text-[10px]">My Work</span>
+            <span className="w-2 h-2 rounded-full bg-[#1b66ff] animate-pulse"></span>
+            <span className="text-[#1b66ff] font-bold tracking-[0.2em] uppercase text-[10px]">
+              My Work
+            </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight">
             Featured Projects
@@ -84,36 +109,34 @@ const Projects = () => {
             <div
               key={index}
               className="group relative flex flex-col bg-[#0a1125]/40 backdrop-blur-md border border-white/5 rounded-[2.5rem] transition-all duration-500 hover:border-[#1b66ff]/50 hover:-translate-y-3 shadow-2xl overflow-hidden"
+              data-aos="zoom-in-up"
+              data-aos-delay={index * 150}
             >
-              
               {/* Blurred Background Image Layer */}
-              <div 
+              <div
                 className="absolute inset-0 z-0 transition-transform duration-1000 group-hover:scale-125"
                 style={{
                   backgroundImage: `url(${project.img})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  filter: 'blur(50px) brightness(0.15) saturate(1.5)',
-                  opacity: '0.6'
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: "blur(50px) brightness(0.15) saturate(1.5)",
+                  opacity: "0.6",
                 }}
               />
 
               {/* Project Card Content */}
               <div className="relative z-10 flex flex-col h-full">
-                
-                {/* Project Image Preview */}
                 <div className="relative group-hover:p-2 transition-all duration-500">
                   <div className="relative h-56 w-full overflow-hidden rounded-t-[2.5rem] group-hover:rounded-[2rem] border-b border-white/10 transition-all duration-500">
-                    <img 
-                      src={project.img} 
-                      alt={project.title} 
+                    <img
+                      src={project.img}
+                      alt={project.title}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-[#050b1a]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                       <div className="w-12 h-12 bg-[#1b66ff] rounded-full flex items-center justify-center text-white scale-50 group-hover:scale-100 transition-transform duration-500 shadow-[0_0_20px_rgba(27,102,255,0.6)]">
-                          <ArrowUpRight size={24} />
-                       </div>
+                      <div className="w-12 h-12 bg-[#1b66ff] rounded-full flex items-center justify-center text-white scale-50 group-hover:scale-100 transition-transform duration-500 shadow-[0_0_20px_rgba(27,102,255,0.6)]">
+                        <ArrowUpRight size={24} />
+                      </div>
                     </div>
                     <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-white/10">
                       {project.category}
@@ -130,7 +153,6 @@ const Projects = () => {
                     {project.desc}
                   </p>
 
-                  {/* Tech Tags */}
                   <div className="flex flex-wrap gap-2 mb-8">
                     {project.tags.map((tag, i) => (
                       <span
@@ -142,15 +164,14 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Links */}
                   <div className="mt-auto flex gap-3">
-                    <a 
+                    <a
                       href={project.liveLink}
                       className="flex-[2] bg-[#1b66ff] hover:bg-[#1554d1] text-white text-[10px] font-black py-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 shadow-[0_10px_20px_rgba(27,102,255,0.2)] uppercase tracking-widest"
                     >
                       Live Demo <ExternalLink size={14} />
                     </a>
-                    <a 
+                    <a
                       href={project.codeLink}
                       className="flex-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-[10px] font-black py-4 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-95 uppercase tracking-widest"
                     >
@@ -158,10 +179,19 @@ const Projects = () => {
                     </a>
                   </div>
                 </div>
-
               </div>
             </div>
           ))}
+        </div>
+
+        <div
+          className="mt-15 flex text-center justify-center"
+          data-aos="flip-up"
+          data-aos-duration="1500"
+        >
+          <button className="bg-[#1b66ff] hover:bg-[#1554d1] text-white text-[10px] font-black py-4 px-4 rounded-2xl transition-all active:scale-95 shadow-[0_10px_20px_rgba(27,102,255,0.2)] uppercase tracking-widest">
+            View All Projects
+          </button>
         </div>
       </div>
     </section>

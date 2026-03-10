@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import portfolio from "../../assets/zulqarnain (3).png";
 
 const Myskill = () => {
@@ -15,7 +17,7 @@ const Myskill = () => {
         {
             degree: "Frontend Certification",
             year: "2023",
-            institute: " Code's Thinker",
+            institute: "Code's Thinker",
             desc: "React, Next.js & modern JavaScript."
         }
     ];
@@ -43,15 +45,22 @@ const Myskill = () => {
             observer.observe(sectionRef.current);
         }
 
+        AOS.init({ duration: 1200, once: true });
+
         return () => observer.disconnect();
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-10 bg-[#0B1120] text-white overflow-hidden" id="skills">
+        <section
+            ref={sectionRef}
+            className="py-10 bg-[#0B1120] text-white overflow-hidden"
+            id="skills"
+            data-aos="fade-up"
+        >
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Section Heading */}
-                <div className="flex flex-col items-center text-center mb-16">
+                <div className="flex flex-col items-center text-center mb-16" data-aos="zoom-in">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                         My <span className="text-blue-500">Expertise</span>
                     </h2>
@@ -61,7 +70,7 @@ const Myskill = () => {
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
 
                     {/* LEFT COLUMN: Education */}
-                    <div className="space-y-10">
+                    <div className="space-y-10" data-aos="fade-right">
                         <div className="flex items-center gap-4 mb-2">
                             <div className="p-3 bg-blue-600/10 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,7 +83,7 @@ const Myskill = () => {
 
                         <div className="relative border-l-2 border-blue-600/30 ml-4 pl-8 space-y-12">
                             {education.map((edu, index) => (
-                                <div key={index} className="relative">
+                                <div key={index} className="relative" data-aos="fade-up" data-aos-delay={index * 100}>
                                     {/* Timeline Dot */}
                                     <div className="absolute -left-[41px] top-1 w-5 h-5 bg-[#0B1120] border-2 border-blue-500 rounded-full shadow-[0_0_10px_rgba(37,99,235,0.5)]"></div>
 
@@ -88,7 +97,7 @@ const Myskill = () => {
                     </div>
 
                     {/* RIGHT COLUMN: Skills */}
-                    <div className="space-y-10">
+                    <div className="space-y-10" data-aos="fade-left">
                         <div className="flex items-center gap-4 mb-2">
                             <div className="p-3 bg-blue-600/10 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,7 +109,7 @@ const Myskill = () => {
 
                         <div className="space-y-7 bg-[#111827]/50 p-8 rounded-3xl border border-gray-800 shadow-xl">
                             {skills.map((skill, index) => (
-                                <div key={index} className="space-y-3">
+                                <div key={index} className="space-y-3" data-aos="fade-up" data-aos-delay={index * 100}>
                                     <div className="flex justify-between items-end">
                                         <span className="text-base font-bold text-gray-200 tracking-wide">{skill.name}</span>
                                         <span className="text-blue-500 font-extrabold">{isVisible ? skill.percentage : 0}%</span>
@@ -119,7 +128,7 @@ const Myskill = () => {
                         </div>
 
                         {/* Call to Action Buttons */}
-                        <div className="flex flex-wrap gap-4 pt-4">
+                        <div className="flex flex-wrap gap-4 pt-4" data-aos="zoom-in" data-aos-delay={300}>
                             <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all duration-300 shadow-[0_5px_15px_rgba(37,99,235,0.4)] active:scale-95">
                                 Download CV
                             </button>

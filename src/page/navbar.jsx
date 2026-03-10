@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 w-full bg-[#0B1120]/95 backdrop-blur-md border-b border-white/10 z-50">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center gap-110 ">
 
         {/* Logo */}
         <div
@@ -32,7 +32,7 @@ const Navbar = () => {
           <img
             src={g1}
             alt="Zulqarnain Logo"
-            className="h-12 w-12 object-contain transition duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
+            className="h-100 w-50 object-contain transition duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
           />
         </div>
 

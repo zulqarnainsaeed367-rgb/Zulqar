@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import portfolio from "../../assets/zulqarnain (3).png";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Aboutsection = () => {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1200,
+            once: true,
+            easing: "ease-in-out"
+        });
+    }, []);
+
     const stats = [
         { label: "Years Experience", value: "3+" },
         { label: "Projects Completed", value: "50+" },
@@ -18,7 +30,7 @@ const Aboutsection = () => {
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Section Heading */}
-                <div className="flex flex-col items-center text-center mb-20">
+                <div data-aos="fade-down" className="flex flex-col items-center text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                         About <span className="text-blue-500">Me</span>
                     </h2>
@@ -28,8 +40,9 @@ const Aboutsection = () => {
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left: Image with Glow & Border Design */}
-                    <div className="relative flex justify-center lg:justify-start">
+                    <div data-aos="fade-right" className="relative flex justify-center lg:justify-start">
                         <div className="relative z-10 group">
+                            
                             {/* Outer Decorative Box */}
                             <div className="absolute -top-6 -left-6 w-full h-full border-2 border-blue-500/30 rounded-2xl -z-10 group-hover:top-0 group-hover:left-0 transition-all duration-500"></div>
 
@@ -48,7 +61,7 @@ const Aboutsection = () => {
                     </div>
 
                     {/* Right: Content Section */}
-                    <div className="space-y-8">
+                    <div data-aos="fade-left" className="space-y-8">
                         <div className="space-y-4">
                             <h3 className="text-2xl md:text-3xl font-bold text-blue-400">
                                 Crafting Exceptional Digital Experiences
