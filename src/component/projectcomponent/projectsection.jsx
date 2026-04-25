@@ -8,6 +8,9 @@ import k6 from "../../assets/k6.png";
 import k4 from "../../assets/k4.png";
 import k5 from "../../assets/k5.png";
 import k9 from "../../assets/k9.png";
+import k12 from "../../assets/k12.png";
+import k13 from "../../assets/k13.png";
+import k14 from "../../assets/k14.png";
 
 const projects = [
   {
@@ -64,6 +67,40 @@ const projects = [
     liveLink: "https://ism-institude.vercel.app/",
     codeLink: "#",
   },
+
+  {
+    title: "Health is Our Priority",
+    category: "Frontend",
+    desc: "Clean and minimalist financial application interface focusing on user experience and data clarity.",
+    img: k12,
+    tags: ["React Native", "Firebase", "UI/UX"],
+    liveLink: "https://life-rust-sigma.vercel.app/",
+    codeLink: "#",
+  },
+
+  {
+    title: "Al Dosari Reserve",
+    category: "Frontend",
+    desc: "Clean and minimalist financial application interface focusing on user experience and data clarity.",
+    img: k13,
+    tags: ["React Native", "Firebase", "UI/UX"],
+    liveLink: "https://al-dosari-reserve.vercel.app/",
+    codeLink: "#",
+  },
+
+    {
+    title: "ZoomFleet",
+    category: "Frontend",
+    desc: "Clean and minimalist financial application interface focusing on user experience and data clarity.",
+    img: k14,
+    tags: ["React Native", "Firebase", "UI/UX"],
+    liveLink: "https://zoom-fleet.vercel.app/",
+    codeLink: "#",
+  },
+
+
+  
+
 ];
 
 const Projects = () => {
